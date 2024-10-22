@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Dashboard - Sistema de Casa de Eventos</title>
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <button id="logout-btn">Logout</button>
+    </header>
+    <main>
+        <section id="eventos">
+            <h2>Próximos Eventos</h2>
+            <div class="evento">
+                <h3>Show de Rock</h3>
+                <p>Data: 25/12/2023</p>
+                <p>Local: Arena de Shows</p>
+            </div>
+            <div class="evento">
+                <h3>Festival de Jazz</h3>
+                <p>Data: 01/01/2024</p>
+                <p>Local: Parque Central</p>
+            </div>
+        </section>
+        <section id="reservas">
+            <h2>Faça sua Reserva</h2>
+            <form id="reserva-form">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="evento">Evento:</label>
+                <select id="evento" name="evento" required>
+                    <option value="rock">Show de Rock</option>
+                    <option value="jazz">Festival de Jazz</option>
+                </select>
+                
+                <button type="submit">Reservar</button>
+            </form>
+        </section>
+        <section id="cadastrar-evento">
+            <h2>Cadastrar Evento</h2>
+            <form id="evento-form">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+                
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required>
+                
+                <label for="local">Local:</label>
+                <input type="text" id="local" name="local" required>
+                
+                <button type="submit">Cadastrar Evento</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        document.getElementById('logout-btn').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+
+        document.getElementById('reserva-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Reserva realizada com sucesso!');
+        });
+
+        document.getElementById('evento-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const titulo = document.getElementById('titulo').value;
+            const data = document.getElementById('data').value;
+            const local = document.getElementById('local').value;
+            const username = 'root'; // Usuário root padrão
+            const password = 'rootpassword'; // Senha root padrão
+
+            fetch('http://localhost:3000/events', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password, event: { titulo, data, local } })
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+            })
+            .catch(err => {
+                alert('Erro ao cadastrar evento');
+                console.error(err);
+            });
+        });
+    </script>
+</body>
+</html>

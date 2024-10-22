@@ -1,0 +1,150 @@
+/* Estilo básico para o corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Estilo para o cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    background: #4a90e2;
+    color: #fff;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header button {
+    background: #fff;
+    color: #4a90e2;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+header button:hover {
+    background: #357ab8;
+    color: #fff;
+}
+
+/* Estilo para as seções */
+main {
+    width: 80%;
+    margin-top: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+.evento {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+/* Estilo para o contêiner de dados do backend */
+#backend-data {
+    font-size: 1.2em;
+    color: #333;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#backend-data:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para botões */
+button {
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #357ab8;
+}
+
+/* Estilo para links */
+a {
+    color: #4a90e2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #357ab8;
+}
+
+/* Estilo para as telas de login e cadastro */
+.hidden {
+    display: none;
+}
+
+#login-screen, #register-screen {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+#login-screen h2, #register-screen h2 {
+    margin-bottom: 20px;
+}
+
+#login-screen form, #register-screen form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-screen label, #register-screen label {
+    margin-bottom: 5px;
+}
+
+#login-screen input, #register-screen input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#login-screen button, #register-screen button {
+    margin-top: 10px;
+}
+
+/* Estilo para mensagens de erro e sucesso */
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+.success {
+    color: green;
+    margin-top: 10px;
+}
