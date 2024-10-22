@@ -71,6 +71,3 @@ Contribuições são bem-vindas! Siga os passos abaixo para contribuir:
 3. Commit suas mudanças: `git commit -m 'Adiciona minha feature'`
 4. Faça o push para a branch: `git push origin minha-feature`
 5. Abra um Pull Request.
-
-## Contato
-Para mais informações, entre em contato com [seu-email@dominio.com](mailto:seu-email@dominio.com).
